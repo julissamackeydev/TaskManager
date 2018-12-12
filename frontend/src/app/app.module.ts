@@ -1,9 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskComponent } from './task/task.component';
+
+const appRoutes: Routes = [
+  {path:'', component: TaskComponent}
+]
 
 @NgModule({
   declarations: [
@@ -12,7 +18,11 @@ import { TaskComponent } from './task/task.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
