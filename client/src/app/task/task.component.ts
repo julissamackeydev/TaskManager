@@ -16,6 +16,7 @@ export class TaskComponent implements OnInit {
   ngOnInit() {
     this.taskService.getTasks().subscribe(response=>{
       this.tasks.push(response)
+      console.log(this.tasks);
     })
     // this.taskService.addTask({
     //   name: 'post request',

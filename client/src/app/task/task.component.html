@@ -1,1 +1,24 @@
-{{this.tasks}}
+<div class="addingTasks">
+    <form>
+        <textarea class="newTask"type="text" rows="10"placeholder="Add a task..."></textarea><br>
+        <h4>priority</h4>
+        <input type="radio" name="1" value="1">
+        <label for="1">1</label>
+        <input type="radio" name="2" value="2">
+        <label for="2">2</label>
+        <input type="radio" name="3" value="3">
+        <label for="3">3</label>
+        <input type="radio" name="4" value="4">
+        <label for="4">4</label>
+        <input type="radio" name="5" value="5">
+        <label for="5">5</label><br>
+        <input type="submit">
+    </form>
+</div>   
+<div class="viewingTasks">
+    <ul>
+        <li *ngFor="let item of items; let i = index">
+            {{i}} {{task}}
+        </li>
+    </ul>
+</div> 
