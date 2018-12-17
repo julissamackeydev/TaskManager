@@ -1,0 +1,16 @@
+.container{
+    display:flex;
+    flex-direction: row; 
+    justify-content: space-around;
+}
+.newTask{
+    display:flex;
+    width:100%;
+    flex-direction: column;
+}
+.currentTasks{
+    display:flex;
+    width:100%;
+    flex-direction: column;
+    background-color: lightgray;
+}

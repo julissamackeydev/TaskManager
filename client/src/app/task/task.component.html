@@ -1,24 +1,36 @@
-<div class="addingTasks">
-    <form>
-        <textarea class="newTask"type="text" rows="10"placeholder="Add a task..."></textarea><br>
-        <h4>priority</h4>
-        <input type="radio" name="1" value="1">
-        <label for="1">1</label>
-        <input type="radio" name="2" value="2">
-        <label for="2">2</label>
-        <input type="radio" name="3" value="3">
-        <label for="3">3</label>
-        <input type="radio" name="4" value="4">
-        <label for="4">4</label>
-        <input type="radio" name="5" value="5">
-        <label for="5">5</label><br>
-        <input type="submit">
+<div class="container">
+    <form class="newTask" [formGroup]="form" (ngSubmit)="addTask(form.value)">
+        <div class="form-container">
+            <div class="row columns">
+                <label>Task
+                    <input type="text" formControlName="name">
+                </label>
+                  
+                <label>Description
+                    <input  type="text" formControlName="description">
+                </label>
+                  
+                <label for="priority">priority</label>
+                <label for="priority">1
+                    <input type="radio" name="priority" formControlName="priority" value="1"> 
+                </label>
+                <label for="priority">2
+                    <input type="radio" name="priority" formControlName="priority" value="2">
+                </label>
+                <label for="priority">3
+                    <input type="radio" name="priority" formControlName="priority" value="3">
+                </label>
+                <label for="priority">4
+                    <input type="radio" name="priority" formControlName="priority" value="4">
+                </label>
+                <label for="priority">5
+                    <input type="radio" name="priority" formControlName="priority" value="5">      
+                </label>    
+                <input type="submit" class="button expanded" value="Submit Form" [disabled]="!form.valid">
+            </div>
+        </div>
     </form>
-</div>   
-<div class="viewingTasks">
-    <ul>
-        <li *ngFor="let item of items; let i = index">
-            {{i}} {{task}}
-        </li>
-    </ul>
-</div> 
+    <div class="currentTasks">
+        <p>lrem ipsm</p>
+    </div>
+</div>
