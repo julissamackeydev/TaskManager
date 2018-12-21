@@ -7,7 +7,7 @@ import { TaskService } from './services/task.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'Task Manager';
+  title = 'task manager';
   constructor(private taskService:TaskService){}
 
   ngOnInit(){

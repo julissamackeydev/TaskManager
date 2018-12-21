@@ -4,12 +4,19 @@
     justify-content: space-around;
     padding-left: 12%;
     padding-right: 12%;
+    padding-bottom: 12%;
 }
 .newTask{
     display:flex;
     width:30%;
     flex-direction: column;
     border-left: 1px solid lavender;
+}
+.complete{
+    text-decoration: line-through;
+}
+.hide{
+    display: none;
 }
 .currentTasks{
     display:flex;
@@ -18,12 +25,14 @@
     flex-direction: column;
     /* background-color: lightgray; */
 }
-.complete{
-    color:mistyrose; 
+.notSoImportant{
+    color: gray;
     border-bottom: 1px dotted mistyrose ;
 }
-.incomplete{
-    color:royalblue;
+.important{
+    /* color:rgb(190, 65, 225); */
+    font-weight: bolder;
+    color:gray;
     border-bottom: 1px dotted royalblue;
 }
 button{
@@ -31,9 +40,11 @@ button{
 }
 .delete{
     color:gray;
+    /* margin-left: 30%; */
 }
 .markComplete{
-    color:lightgreen;
+    color:green;
+    font-weight: bold;
 }
 .button-expanded{
     background-color: lightgreen;

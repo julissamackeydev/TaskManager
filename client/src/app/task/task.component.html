@@ -1,23 +1,27 @@
 <div class="container">
 
     <div class="currentTasks">
-        <div *ngFor="let task of tasks;" [ngClass]="task.completed === true ? 'complete' : 'incomplete'">
-            <p>{{task.name}} | {{task.date}}</p>
-            <p>{{task.description}}</p> 
-            <p>priority: {{task.priority}}</p>
-            <button class= "delete" (click)="deleteTask(task._id)">delete</button>             
-            <button class= "markComplete" (click)="markComplete(task._id)">done</button>
+        <div *ngFor="let task of tasks;" [ngClass]="task.priority < 3 ? 'important' : 'notSoImportant'">
+            <div [ngClass]="task.completed === true ? 'complete' : 'incomplete'">
+                    <p>{{task.name}} | {{task.date}}</p>
+                    <p>{{task.description}}</p> 
+                    <p>priority: {{task.priority}}</p>
+                    <div [ngClass]="task.completed === true ? 'hide' : 'display'">           
+                        <button class= "markComplete" (click)="markComplete(task._id)">complete</button>
+                    </div>
+                    <button class= "delete" (click)="deleteTask(task._id)">delete</button>  
+            </div>
         </div>
     </div>
 
     <form class="newTask" [formGroup]="form" (ngSubmit)="addTask(form.value)">
         <div class="form-container">
             <div class="row columns">
-                
+                <h2>new</h2>
                 <input type="text" formControlName="name" placeholder="new task">
                 <br>
                 <br>
-                <textarea type="text" rows="3" formControlName="description" placeholder="notes"></textarea>
+                <textarea type="text" rows="3" formControlName="description" placeholder="notes"></textarea><br>
                 
                   
                 <label for="priority">priority</label><br>
