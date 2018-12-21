@@ -11,11 +11,15 @@ const TaskSchema = mongoose.Schema({
    },
    description: {
        type: String,
-       required: true
+       required: false
    },
    completed: {
        type: Boolean,
        required: true
+   },
+   date:{
+       type: Date,
+       requried: true
    }
 });
 

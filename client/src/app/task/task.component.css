@@ -2,15 +2,43 @@
     display:flex;
     flex-direction: row; 
     justify-content: space-around;
+    padding-left: 12%;
+    padding-right: 12%;
 }
 .newTask{
     display:flex;
-    width:100%;
+    width:30%;
     flex-direction: column;
+    border-left: 1px solid lavender;
 }
 .currentTasks{
     display:flex;
+    text-align: left;
     width:100%;
     flex-direction: column;
-    background-color: lightgray;
+    /* background-color: lightgray; */
+}
+.complete{
+    color:mistyrose; 
+    border-bottom: 1px dotted mistyrose ;
+}
+.incomplete{
+    color:royalblue;
+    border-bottom: 1px dotted royalblue;
+}
+button{
+    padding: 2px;
+}
+.delete{
+    color:gray;
+}
+.markComplete{
+    color:lightgreen;
+}
+.button-expanded{
+    background-color: lightgreen;
+}
+label{
+    font-size: smaller;
+    color: gray;
 }

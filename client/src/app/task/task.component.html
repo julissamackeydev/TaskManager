@@ -1,16 +1,26 @@
 <div class="container">
+
+    <div class="currentTasks">
+        <div *ngFor="let task of tasks;" [ngClass]="task.completed === true ? 'complete' : 'incomplete'">
+            <p>{{task.name}} | {{task.date}}</p>
+            <p>{{task.description}}</p> 
+            <p>priority: {{task.priority}}</p>
+            <button class= "delete" (click)="deleteTask(task._id)">delete</button>             
+            <button class= "markComplete" (click)="markComplete(task._id)">done</button>
+        </div>
+    </div>
+
     <form class="newTask" [formGroup]="form" (ngSubmit)="addTask(form.value)">
         <div class="form-container">
             <div class="row columns">
-                <label>Task
-                    <input type="text" formControlName="name">
-                </label>
+                
+                <input type="text" formControlName="name" placeholder="new task">
+                <br>
+                <br>
+                <textarea type="text" rows="3" formControlName="description" placeholder="notes"></textarea>
+                
                   
-                <label>Description
-                    <input  type="text" formControlName="description">
-                </label>
-                  
-                <label for="priority">priority</label>
+                <label for="priority">priority</label><br>
                 <label for="priority">1
                     <input type="radio" name="priority" formControlName="priority" value="1"> 
                 </label>
@@ -25,12 +35,11 @@
                 </label>
                 <label for="priority">5
                     <input type="radio" name="priority" formControlName="priority" value="5">      
-                </label>    
-                <input type="submit" class="button expanded" value="Submit Form" [disabled]="!form.valid">
+                </label><br> 
+
+                <button type="submit" value="Submit Form" [disabled]="!form.valid">add</button>
+            
             </div>
         </div>
     </form>
-    <div class="currentTasks">
-        <p>lrem ipsm</p>
-    </div>
 </div>

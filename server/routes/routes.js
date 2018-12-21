@@ -19,7 +19,8 @@ router.post('/tasks', (request, response, next)=>{
         name: request.body.name,
         description: request.body.description,
         priority: request.body.priority,
-        completed: request.body.completed
+        completed: request.body.completed,
+        date: new Date()
     });
     task.save((error, task)=>{
         if(error){
